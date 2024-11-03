@@ -5,6 +5,33 @@
 //     const playGroundSection = document.getElementById('play-ground-section')
 //         playGroundSection.classList.remove('hidden')
 // }
+function handleKeyboardKeyPress(event){
+    const gamerPresed = event.key
+     console.log('gamer pressed' ,gamerPresed)
+
+    //get the expected press
+    const currentAlphabetElement = document.getElementById('current-alphabet')
+    const currentAlphabet = currentAlphabetElement.innerText
+    const lowerAlphabet = currentAlphabet.toLocaleLowerCase()
+    console.log(gamerPresed,lowerAlphabet)
+
+    //checked macth or not
+    if(gamerPresed === lowerAlphabet){
+        console.log('you got a  point')
+        continueGame()
+    }
+    else{
+        console.log('you lost a life')
+    }
+
+
+}
+//capture keyboard key press
+document.addEventListener('keyup',handleKeyboardKeyPress )
+
+
+
+
 function continueGame(){
     //genarate a random alphabet
     const alphabet = getARandomAlphabet()
