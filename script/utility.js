@@ -18,6 +18,13 @@ function removeBackgroundById(elementId){
     element.classList.remove('bg-orange-400')
 }
 
+function getElementValueTextById(elementId){
+    const element = document.getElementById(elementId)
+    const elementValueText = element.innerText
+    const integerValue = parseInt(elementValueText)
+    return integerValue
+}
+
 function getARandomAlphabet(){
     const alphabetString = 'abcdefghijklmnopqrstuvwxyz'
     const alphabets = alphabetString.split('')
