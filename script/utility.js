@@ -24,6 +24,16 @@ function getElementValueTextById(elementId){
     const integerValue = parseInt(elementValueText)
     return integerValue
 }
+function setElementValueTextById(elementId, value){
+    const element = document.getElementById(elementId)
+    element.innerText = value
+}
+
+
+
+
+
+
 
 function getARandomAlphabet(){
     const alphabetString = 'abcdefghijklmnopqrstuvwxyz'
