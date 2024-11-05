@@ -9,6 +9,11 @@ function handleKeyboardKeyPress(event){
     const gamerPresed = event.key
      console.log('gamer pressed' ,gamerPresed)
 
+    //escape the game if player presed esc
+    if(gamerPresed === 'escape'){
+        gameOver()
+    }
+
     //get the expected press
     const currentAlphabetElement = document.getElementById('current-alphabet')
     const currentAlphabet = currentAlphabetElement.innerText
@@ -99,4 +104,12 @@ function play(){
 function gameOver(){
     hideElementById('play-ground-section')
     showElementById('final-score')
+
+    //update final score
+    const lastScore = getElementValueTextById('current-score')
+    console.log(lastScore)
+    setElementValueTextById('final-game-score', lastScore)
+    //clear the last selected alphabet 
+    const currentAlphabet = getElementTextById('current-alphabet')
+    removeBackgroundById(currentAlphabet)
 }
